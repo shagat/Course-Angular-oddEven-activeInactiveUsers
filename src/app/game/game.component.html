@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Game Control</div>
+  <div class="panel-body">
+    <button class="btn btn-success" (click)="onClickStart()">Start Timer</button>
+    <button class="btn btn-danger" (click)="onClickStop()">Stop Timer</button>
+    <div class="row col-xs-12" *ngFor="let gt of gameTimer">
+      <div class="row col-xs-12">
+      <app-odd *ngIf="!checkModulus(gt)" style="color:slategrey;">
+        {{ gt }}
+      </app-odd>
+    </div>
+    <div class="row col-xs-12">
+      <app-even *ngIf="checkModulus(gt)" style="color:cornflowerblue;">
+        {{ gt }}
+      </app-even>
+    </div>
+    </div>
+  </div>
+</div>
