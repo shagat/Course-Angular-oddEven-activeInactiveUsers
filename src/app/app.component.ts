@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gamecontrol';
+  oddTimerLogs:number[] = [];
+  evenTimerLogs:number[] = [];
+
+  timerEventListener(timerEventNumber: number){
+    if (timerEventNumber % 2 == 1){
+      this.oddTimerLogs.push(timerEventNumber);
+    }
+    else{
+      this.evenTimerLogs.push(timerEventNumber);
+    }
+  }
 }

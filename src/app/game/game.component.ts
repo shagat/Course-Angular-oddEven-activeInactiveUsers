@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Type } from '@angular/core';
 //import { clearInterval } from 'timers';
 
 @Component({
@@ -7,16 +7,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
-  @Output() gameTimerStarts = new EventEmitter<{ startGameTime: number }>();
+  @Output() gameTimerStarts = new EventEmitter<number>();
+  // NG CONTENT LOGIC 
   // gameTimer: Array<number> = [0];
   // i = 0;
   // timeoutId: null | ReturnType<typeof setTimeout> = null
+
+  lastNumber: number = 0;
+  interval: null | ReturnType<typeof setTimeout> = null
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  // NG CONTENT LOGIC 
   // onClickStart() {
   //   this.timeoutId = setInterval(() => {
   //     this.i += 1
@@ -38,5 +42,19 @@ export class GameComponent implements OnInit {
   //     clearInterval(this.timeoutId)
   //   }
   // }
+
+  onClickStartTimer(){
+    this.interval = setInterval(() => {
+      this.gameTimerStarts.emit((this.lastNumber) + 1)
+      this.lastNumber++
+    }, 1000
+    )
+  }
+
+  onClickStopTimer(){
+    if (this.interval){
+     clearInterval(this.interval)
+    }
+  }
 }
 
