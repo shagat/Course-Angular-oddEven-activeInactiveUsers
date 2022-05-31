@@ -5,13 +5,17 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule
