@@ -1,0 +1,43 @@
+<div class="container" style="border: 2px solid;">
+  <h3>This is forms part</h3>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+          <span class="help-block" *ngIf="!email.valid && email.touched"> Enter a valid email!</span>
+        </div>
+
+        <div class="form-group">
+          <label for="subscription">Subscription</label>
+          <select id="subscription" [ngModel]="defaultSub" name="subscription" id="subscription">
+            <option value="basic">Basic</option>
+            <option value="advance">Advance</option>
+            <option value="pro">Pro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" ngModel name="password" required password
+            #password="ngModel">
+          <span class="help-block" *ngIf="!password.valid && password.touched"> Enter a password!</span>
+        </div>
+
+        <button type="submit" [disabled]="!f.valid">Submit</button>
+        
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Email: {{ user.email }}</p>
+      <p>Answer: {{ user.subscription }}</p>
+      <p>Password: {{ user.password }}</p>
+    </div>
+  </div>
+</div>

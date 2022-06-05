@@ -8,6 +8,8 @@ import { EvenComponent } from './even/even.component';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 import { CounterService } from './counter.service';
+import { FormsComponent } from './forms/forms.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import { CounterService } from './counter.service';
     OddComponent,
     EvenComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    FormsComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule
   ],
   providers: [CounterService],
