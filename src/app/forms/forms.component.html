@@ -12,7 +12,7 @@
 
         <div class="form-group">
           <label for="subscription">Subscription</label>
-          <select id="subscription" [ngModel]="defaultSub" name="subscription" id="subscription">
+          <select id="subscription" [ngModel]="'pro'" name="subscription" id="subscription">
             <option value="basic">Basic</option>
             <option value="advance">Advance</option>
             <option value="pro">Pro</option>
@@ -26,7 +26,7 @@
           <span class="help-block" *ngIf="!password.valid && password.touched"> Enter a password!</span>
         </div>
 
-        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Submit</button>
         
       </form>
     </div>

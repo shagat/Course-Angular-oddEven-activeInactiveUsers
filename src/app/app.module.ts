@@ -9,7 +9,8 @@ import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 import { CounterService } from './counter.service';
 import { FormsComponent } from './forms/forms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsReactComponent } from './forms-react/forms-react.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,12 @@ import { FormsModule } from '@angular/forms';
     ActiveUsersComponent,
     InactiveUsersComponent,
     FormsComponent,
+    FormsReactComponent,
   ],
   imports: [
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [CounterService],
   bootstrap: [AppComponent]

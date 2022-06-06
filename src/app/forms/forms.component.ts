@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormsComponent {
   @ViewChild('f', { static: false }) signupForm!: NgForm;
-  defaultSub = 'advance'
+  defaultSub = 'pro'
   user = {
     email: '',
     subscription: '',
@@ -26,7 +26,6 @@ export class FormsComponent {
     this.user.email = this.signupForm.value.email;
     this.user.subscription = this.signupForm.value.subscription;
     this.user.password = this.signupForm.value.password;
-    console.log(this.signupForm.value)
     this.signupForm.reset();
   }
 }
