@@ -23,7 +23,7 @@ export class FormsComponent {
 
   onSubmit() {
     this.submitted = true;
-    this.user.email = this.signupForm.value.user;
+    this.user.email = this.signupForm.value.email;
     this.user.subscription = this.signupForm.value.subscription;
     this.user.password = this.signupForm.value.password;
     console.log(this.signupForm.value)
