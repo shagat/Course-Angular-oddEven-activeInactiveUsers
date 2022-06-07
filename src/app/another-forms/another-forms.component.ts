@@ -15,20 +15,20 @@ export class AnotherFormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectForm = new FormGroup({
-      'project': new FormControl(null, [Validators.required], [this.forbiddenNames]),
+      'project': new FormControl(null, [Validators.required, this.forbiddenNames], [this.asyncForbiddenNames]),
       'email': new FormControl(null, [Validators.email, Validators.required]),
       'status': new FormControl('stable')
     });
   }
 
-  // forbiddenNames(control: FormControl): {[s: string]:boolean} {
-  //   if (this.forbiddenProjectNames.indexOf(control.value) !== -1) {
-  //     return {'nameIsForbidden': true};
-  //   }
-  //   return null;
-  // }
+  forbiddenNames(control: FormControl): {[s: string]:boolean} {
+    if (this.forbiddenProjectNames.indexOf(control.value) !== -1) {
+      return {'nameIsForbidden': true};
+    }
+    return null;
+  }
 
-  forbiddenNames(control: FormControl): Promise<any> | Observable<any>{
+  asyncForbiddenNames(control: FormControl): Promise<any> | Observable<any>{
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
         if (control.value === 'test'){
