@@ -55,6 +55,7 @@ export class FormsReactComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.signupForm)
+    this.signupForm.reset();
   }
 
 }

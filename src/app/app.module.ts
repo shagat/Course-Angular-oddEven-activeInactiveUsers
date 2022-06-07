@@ -11,6 +11,7 @@ import { CounterService } from './counter.service';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsReactComponent } from './forms-react/forms-react.component';
+import { AnotherFormsComponent } from './another-forms/another-forms.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsReactComponent } from './forms-react/forms-react.component';
     InactiveUsersComponent,
     FormsComponent,
     FormsReactComponent,
+    AnotherFormsComponent,
   ],
   imports: [
     FormsModule,
