@@ -13,8 +13,13 @@ export class AppComponent implements OnInit{
   oddTimerLogs: number[] = [];
   evenTimerLogs: number[] = [];
   activityCounter: number = 0;
-  
+  //...angular element
+  content = null;
+
   constructor(private userServices : UsersService){
+    setTimeout(() => {
+      this.content = "<app-alert message='load dynamically'> </app-alert>";
+    }, 1000);
   }
 ngOnInit(): void {
   //odd even

@@ -12,6 +12,7 @@ import { FormsComponent } from './forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsReactComponent } from './forms-react/forms-react.component';
 import { AnotherFormsComponent } from './another-forms/another-forms.component';
+import { AlertComponent } from './app.alert.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AnotherFormsComponent } from './another-forms/another-forms.component';
     FormsComponent,
     FormsReactComponent,
     AnotherFormsComponent,
+    AlertComponent
   ],
   imports: [
     FormsModule,
