@@ -16,11 +16,6 @@ export class FormsComponent {
   };
   submitted = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   onSubmit() {
     this.submitted = true;
     this.user.email = this.signupForm.value.email;
